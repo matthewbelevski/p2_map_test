@@ -263,6 +263,8 @@ function optionChanged() {
   });
 }
 
+init();
+
 // var myMap = L.map("map", {
 //   center: [-37.8136, 144.9631],
 //   zoom: 8
