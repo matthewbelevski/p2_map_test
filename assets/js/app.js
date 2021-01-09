@@ -151,7 +151,9 @@ function optionChanged() {
 
  var dropdownMenu2 = d3.select("#selDataset2");
 
- //console.log(dropdownMenu2)
+ var dropdownMenu3 = d3.select("#selDataset3");
+
+ //console.log(dropdownMenu3)
  
  //assigns the value of the dropdown menu option to a variable
  var dataset = dropdownMenu.property("value");
@@ -161,6 +163,10 @@ function optionChanged() {
  var dataset2 = dropdownMenu2.property("value");
 
  console.log(dataset2);
+
+ var dataset3 = dropdownMenu3.property("value");
+
+ console.log(dataset3);
  
  //filters the sample data by this variable
  var filteredData = data.filter(a => a.NM_REGION === dataset);
@@ -209,10 +215,20 @@ function optionChanged() {
 
  var region2 = filteredData2.map(object => object.Region)
 
+ if (dataset3 === "Rainfall") {
+  y_axis = filteredData.map(object => object.Rainfall);
+  y_axis_title = "Rainfall (mm)"
+}
+else {
+  y_axis = filteredData.map(object => object.MaxTemp);
+  y_axis_title = "Max Temp (C)"
+}
+
+console.log(y_axis)
  
  var trace1 = {
   x: amPeak,
-  y: rainfall,
+  y: y_axis,
   mode: 'markers',
   name: 'AM Peak Average',
   type: 'scatter',
@@ -222,7 +238,7 @@ function optionChanged() {
 
 var trace2 = {
   x: amPeak2,
-  y: rainfall2,
+  y: y_axis,
   mode: 'markers',
   name: 'AM Peak Average',
   type: 'scatter',
@@ -230,14 +246,14 @@ var trace2 = {
   marker: { size: 12}
 };
    
-   var data = [trace1, trace2];
+   var data = [trace1];
 
    var layout = {
     xaxis: {
       title: "AM Peak Average"
     },
     yaxis: {
-      title: "Rainfall (mm)"
+      title: y_axis_title
     },
 
     title:(`Peak of traffic during morning rush hour vs Rainfall July 2016 for ${region[0]}`)
@@ -247,7 +263,7 @@ var trace2 = {
 
    var trace3 = {
     x: pmPeak,
-    y: rainfall,
+    y: y_axis,
     mode: 'markers',
     name: 'PM Peak Average',
     type: 'scatter',
@@ -257,7 +273,7 @@ var trace2 = {
 
   var trace4 = {
     x: pmPeak2,
-    y: rainfall2,
+    y: y_axis,
     mode: 'markers',
     name: 'PM Peak Average',
     type: 'scatter',
@@ -265,14 +281,14 @@ var trace2 = {
     marker: { size: 12}
   };
      
-     var data2 = [trace3, trace4];
+     var data2 = [trace3];
   
      var layout2 = {
       xaxis: {
         title: "PM Peak Average"
       },
       yaxis: {
-        title: "Rainfall (mm)"
+        title: y_axis_title
       },
   
       title:(`Peak of traffic during morning rush hour vs Rainfall July 2016 for ${region[0]}`)
