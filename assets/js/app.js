@@ -231,7 +231,7 @@ function optionChanged() {
         title: "Rainfall (mm)"
       },
   
-      title:'Peak of traffic during morning rush hour vs Rainfall July 2016'
+      title:'Peak of traffic during afternoon rush hour vs Rainfall July 2016'
     };
      
      Plotly.newPlot('bar2', data, layout2);
