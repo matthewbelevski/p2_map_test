@@ -72,7 +72,7 @@ function init() {
        title: "Rainfall (mm)"
      },
  
-     title:'Peak of traffic during morning rush hour vs Rainfall July 2016'
+     title:(`Peak of traffic during morning rush hour vs Rainfall July 2016 for ${region[0]}`)
    };
     
     Plotly.newPlot('bar', data, layout);
@@ -97,7 +97,7 @@ function init() {
          title: "Rainfall (mm)"
        },
    
-       title:'Peak of traffic during morning rush hour vs Rainfall July 2016'
+       title:(`Peak of traffic during morning rush hour vs Rainfall July 2016 for ${region[0]}`)
      };
       
       Plotly.newPlot('bar2', data, layout2);
@@ -206,7 +206,7 @@ function optionChanged() {
       title: "Rainfall (mm)"
     },
 
-    title:'Peak of traffic during morning rush hour vs Rainfall July 2016'
+    title:(`Peak of traffic during morning rush hour vs Rainfall July 2016 for ${region[0]}`)
   };
    
    Plotly.newPlot('bar', data, layout);
@@ -231,7 +231,7 @@ function optionChanged() {
         title: "Rainfall (mm)"
       },
   
-      title:'Peak of traffic during afternoon rush hour vs Rainfall July 2016'
+      title:(`Peak of traffic during morning rush hour vs Rainfall July 2016 for ${region[0]}`)
     };
      
      Plotly.newPlot('bar2', data, layout2);
