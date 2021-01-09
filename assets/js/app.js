@@ -72,7 +72,7 @@ function init() {
        title: "Rainfall (mm)"
      },
  
-     title:(`Peak of traffic during morning rush hour vs Rainfall July 2016 for ${region[0]}`)
+     title:(`Peak of traffic during morning rush hour vs Rainfall (mm) July 2016 for ${region[0]}`)
    };
     
     Plotly.newPlot('bar', data, layout);
@@ -121,7 +121,8 @@ function init() {
        },
        showlegend: false,
        height: 800,
-       width: 1200
+       width: 1200,
+       title: (`${region[0]}`)
      };
      
      Plotly.newPlot("bubble", dataMap, layoutMap);
@@ -256,7 +257,7 @@ var trace2 = {
       title: y_axis_title
     },
 
-    title:(`Peak of traffic during morning rush hour vs Rainfall July 2016 for ${region[0]}`)
+    title:(`Peak of traffic during morning rush hour vs ${y_axis_title} July 2016 for ${region[0]}`)
   };
    
    Plotly.newPlot('bar', data, layout);
@@ -291,7 +292,7 @@ var trace2 = {
         title: y_axis_title
       },
   
-      title:(`Peak of traffic during morning rush hour vs Rainfall July 2016 for ${region[0]}`)
+      title:(`Peak of traffic during morning rush hour vs ${y_axis_title} July 2016 for ${region[0]}`)
     };
      
      Plotly.newPlot('bar2', data2, layout2);
@@ -315,7 +316,8 @@ var trace2 = {
       },
       showlegend: false,
       height: 800,
-      width: 1200
+      width: 1200,
+      title: (`${region[0]}`)
     };
     
     Plotly.newPlot("bubble", dataMap, layoutMap);
