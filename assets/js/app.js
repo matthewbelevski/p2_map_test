@@ -148,42 +148,66 @@ function optionChanged() {
 
  //selects the drop down
  var dropdownMenu = d3.select("#selDataset");
+
+ var dropdownMenu2 = d3.select("#selDataset2");
+
+ //console.log(dropdownMenu2)
  
  //assigns the value of the dropdown menu option to a variable
  var dataset = dropdownMenu.property("value");
  
  console.log(dataset);
+
+ var dataset2 = dropdownMenu2.property("value");
+
+ console.log(dataset2);
  
  //filters the sample data by this variable
  var filteredData = data.filter(a => a.NM_REGION === dataset);
 
  console.log(filteredData)
+
+ var filteredData2 = data.filter(a => a.NM_REGION === dataset2);
+
+ console.log(filteredData2)
  
  //filters the metadata by this variable
  //var filteredMetadata = mdata.filter(a => a.id === parseInt(dataset));
 
  var rainfall = filteredData.map(object => object.Rainfall)
 
+ var rainfall2 = filteredData2.map(object => object.Rainfall)
+
  console.log(rainfall)
 
 
  var amPeak = filteredData.map(object => object.AM_PEAK_VOLUME)
 
+ var amPeak2 = filteredData2.map(object => object.AM_PEAK_VOLUME)
+
  console.log(amPeak)
 
  var pmPeak = filteredData.map(object => object.PM_PEAK_VOLUME)
+
+ var pmPeak2 = filteredData2.map(object => object.PM_PEAK_VOLUME)
 
  var dates = filteredData.map(object => object.Date)
 
  var lat = filteredData.map(object => object.Lat)
 
+ var lat2 = filteredData2.map(object => object.Lat)
+
  console.log(lat[0])
 
  var long = filteredData.map(object => object.Long)
 
+ var long2 = filteredData2.map(object => object.Long)
+
  console.log(long[0])
 
  var region = filteredData.map(object => object.Region)
+
+ var region2 = filteredData2.map(object => object.Region)
 
  
  var trace1 = {
@@ -195,8 +219,18 @@ function optionChanged() {
   text: dates,
   marker: { size: 12}
 };
+
+var trace2 = {
+  x: amPeak2,
+  y: rainfall2,
+  mode: 'markers',
+  name: 'AM Peak Average',
+  type: 'scatter',
+  text: dates,
+  marker: { size: 12}
+};
    
-   var data = [trace1];
+   var data = [trace1, trace2];
 
    var layout = {
     xaxis: {
@@ -211,7 +245,7 @@ function optionChanged() {
    
    Plotly.newPlot('bar', data, layout);
 
-   var trace2 = {
+   var trace3 = {
     x: pmPeak,
     y: rainfall,
     mode: 'markers',
@@ -220,8 +254,18 @@ function optionChanged() {
     text: dates,
     marker: { size: 12}
   };
+
+  var trace4 = {
+    x: pmPeak2,
+    y: rainfall2,
+    mode: 'markers',
+    name: 'PM Peak Average',
+    type: 'scatter',
+    text: dates,
+    marker: { size: 12}
+  };
      
-     var data = [trace2];
+     var data2 = [trace3, trace4];
   
      var layout2 = {
       xaxis: {
@@ -234,7 +278,7 @@ function optionChanged() {
       title:(`Peak of traffic during morning rush hour vs Rainfall July 2016 for ${region[0]}`)
     };
      
-     Plotly.newPlot('bar2', data, layout2);
+     Plotly.newPlot('bar2', data2, layout2);
 
      var dataMap = [
       {
