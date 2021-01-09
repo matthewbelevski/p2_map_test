@@ -15,7 +15,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12 jumbotron text-center">
-        <h1>Does rainfall affect traffic?</h1>
+        <h1>Does rainfall and temperature affect traffic?</h1>
         <p>Use the interactive charts below to explore the dataset</p>
       </div>
     </div>
@@ -52,6 +52,7 @@
           <option value="SPR">Springvale</option>
           <option value="SP2">Springvale 2</option>
         </select>
+        
         </div>
         <div class="panel panel-primary">
           <div class="panel-heading">
@@ -60,6 +61,50 @@
           <div id="sample-metadata" class="panel-body"></div>
         </div>
       </div>
+      <div class="col-md-2">
+        <div class="well2">
+          <h5>Region2:</h5>
+          <select id="selDataset2" onchange="optionChanged(this.value)">
+          <option value="BBN">Blackburn</option>
+          <option value="BRI">Brighton</option>
+          <option value="CA1">Carlton</option>
+          <option value="CA2">Carlton 2</option>
+          <option value="CRN">Croydon</option>
+          <option value="DON">Doncaster</option>
+          <option value="ESS">Essendon</option>
+          <option value="ES2">Essendon 2</option>
+          <option value="FRA">Frankston</option>
+          <option value="FR2">Frankston 2</option>
+          <option value="FT1">Footscray 1</option>
+          <option value="FT2">Footscray 2</option>
+          <option value="FT3">Footscray 3</option>
+          <option value="GLI">Glen Iris</option>
+          <option value="GRE">Greensborough</option>
+          <option value="KEW">Kew</option>
+          <option value="MC1">Melbourne City 1</option>
+          <option value="MC2">Melbourne City 2</option>
+          <option value="MC3">Melbourne City 3</option>
+          <option value="MEN">Mentone</option>
+          <option value="MNP">Moonee Ponds</option>
+          <option value="PRS">Preston</option>
+          <option value="PR2">Preston 2</option>
+          <option value="SK1">St Kilda 1</option>
+          <option value="Sk2">St Kilda 2</option>
+          <option value="SPR">Springvale</option>
+          <option value="SP2">Springvale 2</option>
+        </select>
+        </div>
+        </div>
+
+        <div class="col-md-2">
+          <div class="well3">
+            <h5>Weather:</h5>
+            <select id="selDataset3" onchange="optionChanged(this.value)">
+            <option value="Rainfall">Rainfall</option>
+            <option value="MaxTemp">MaxTemp</option>
+          </select>
+        </div>
+        </div>
       <div class="col-md-12">
         <div id="bar"></div>
       </div>
